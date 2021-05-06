@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>轮播图</title>
+        <style>
+            .ez-slide {
+                position: relative;
+                width: 746px;
+                height: 420px;
+            }
+            .ez-slide-image {
+                /* display: none; */
+                opacity: 0;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .ez-slide-image-active {
+                /* display: inline-block; */
+                opacity: 1;
+                transition: opacity 4s;
+                
+            }
+            .ez-slide-button {
+                height: 50px;
+                opacity: 0.8;
+                background: black;
+                color: white;
+                outline: none;
+                width: 30px;
+
+            }
+            .ez-slide-button-right {
+                right: 0;
+                
+            }
+            .ez-slide-button-left {
+                left: 0;
+                /* height: 50px;
+                opacity: 0.8;
+                background: black;
+                color: white;
+                outline: none;
+                width: 30px; */
+            }
+            .ez-vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                /* width: 800px; */
+            }
+            .ez-slide-buttons {
+                opacity: 0.4;
+                background: black;
+                color: white;
+                outline: none;
+            }
+            .ez-slide-dots {
+                position: absolute;
+                bottom: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            .ez-slide-dot {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: red;
+            }
+            .ez-dot-active {
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 轮播图 -->
+        <!-- data-imgs 是图片的总数 -->
+        <!-- data-active 是当前显示的图片的下标 -->
+        <div class="ez-slide" data-imgs="4" data-active="0">
+            <div class="ez-slide-images">
+                <img id="id-ezimage-0" class="ez-slide-image ez-slide-image-active" src="slideimages/1.jpg" alt="towers">
+                <img id="id-ezimage-1" class="ez-slide-image" src="slideimages/2.jpg" alt="stables">
+                <img id="id-ezimage-2" class="ez-slide-image" src="slideimages/3.jpg" alt="Shrines">
+                <img id="id-ezimage-3" class="ez-slide-image" src="slideimages/4.jpg" alt="Villages">
+            </div>
+            <div class="ez-slide-buttons">
+                <button class="ez-slide-button-right ez-slide-button ez-vertical-center" data-offset="1">&gt</button>
+                <button class="ez-slide-button-left ez-slide-button  ez-vertical-center" data-offset="-1">&lt</button>
+            </div>
+            <div class="ez-slide-dots">
+                <div id="id-ezdot-0" class="ez-slide-dot ez-dot-active" data-index="0"></div>
+                <div id="id-ezdot-1" class="ez-slide-dot" data-index="1"></div>
+                <div id="id-ezdot-2" class="ez-slide-dot" data-index="2"></div>
+                <div id="id-ezdot-3" class="ez-slide-dot" data-index="3"></div>
+            </div>
+        </div>
+        <script src="ez.js"></script>
+        <script src="image.js"></script>
+    </body>
+</html>
